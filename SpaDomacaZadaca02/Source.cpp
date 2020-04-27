@@ -1,10 +1,15 @@
 #include <SFML/Graphics.hpp>
+#include "Game.h"
+#include <iostream>
+using namespace std;
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(800, 600), "Hello, SFML world!");
+	sf::RenderWindow window(sf::VideoMode(900, 900), "Game of Life");
 	window.setFramerateLimit(60);
-	//Cvijet cvijet(&window);
+	Game game(&window);
+	cout << "Boje se mijenjaju u odnosu na broj susjeda.";
+
 
 	while (window.isOpen())
 	{
@@ -16,7 +21,7 @@ int main()
 		}
 
 		window.clear();
-		//cvijet.draw();
+		game.draw();
 		window.display();
 	}
 
